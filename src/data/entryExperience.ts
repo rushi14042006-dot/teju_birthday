@@ -1,0 +1,18 @@
+export const entryExperience = {
+  eyebrow: 'A LITTLE SECRET WORLD',
+  heading: 'For Teju only.',
+  introduction: 'A tiny secret world, made just for you.',
+  fieldLabel: 'Type the secret word to enter.',
+  placeholder: 'Your little secret...',
+  enterLabel: 'Enter my little world ♡',
+  hint: 'Psst… your special nickname is the secret 🤫',
+  error: 'Not quite, little secret keeper. Try again 💗',
+  welcomeHeading: 'Welcome to your little world, Kothi! 💗',
+  welcomeBody: 'A place filled with little memories, secret letters, unexpected surprises and pieces of a story made just for you.',
+  welcomeNote: "Come on in. There's so much waiting for you. 🎀",
+  continueLabel: 'ENTER THE STORY →',
+  loveNoteLabel: 'A tiny note for you 💌',
+  loveNote: "Somewhere between all the little moments, you became someone worth celebrating. I'm glad this little world gets to have you in it. ♡",
+  photo: '/images/hero/hero-main.png',
+  photoCaption: 'Someone very special ♡',
+} as const

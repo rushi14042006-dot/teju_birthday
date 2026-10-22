@@ -1,0 +1,13 @@
+body.custom-heart-cursor,body.custom-heart-cursor *{cursor:none!important}
+body.custom-heart-cursor input:not([type="button"]):not([type="submit"]):not([type="checkbox"]):not([type="radio"]),body.custom-heart-cursor textarea,body.custom-heart-cursor [contenteditable="true"],body.custom-heart-cursor [role="textbox"]{cursor:text!important}
+body.custom-heart-cursor select,body.custom-heart-cursor input[type="range"],body.custom-heart-cursor input[type="checkbox"],body.custom-heart-cursor input[type="radio"]{cursor:auto!important}
+.heart-cursor-layer{position:fixed;z-index:1100;inset:0;overflow:hidden;pointer-events:none;contain:strict}
+.heart-cursor-main{position:fixed;left:0;top:0;width:26px;height:26px;display:grid;place-items:center;opacity:0;will-change:transform,opacity;transition:filter .12s ease,opacity .12s ease;transform:translate3d(-100px,-100px,0) translate(-50%,-50%);pointer-events:none}
+.heart-cursor-main svg{display:block;width:25px;height:25px;overflow:visible;transform-origin:50% 50%;animation:cursor-heart-breathe 2.8s ease-in-out infinite}
+.heart-cursor-main.over-interactive{filter:brightness(1.13) drop-shadow(0 0 4px #e99bb677)}.heart-cursor-main.over-interactive svg{transform:scale(1.12)}
+.heart-cursor-particle{position:fixed;z-index:1100;display:block;left:0;top:0;line-height:1;font-family:Georgia,serif;font-weight:500;text-shadow:0 1px 3px #fff9;pointer-events:none;user-select:none;will-change:transform,opacity;animation:cursor-heart-trail var(--particle-time,650ms) cubic-bezier(.18,.62,.32,1) both}
+.heart-cursor-particle.is-burst{animation-name:cursor-heart-burst;animation-timing-function:cubic-bezier(.14,.76,.36,1)}.heart-cursor-particle.is-spark{font-family:serif;text-shadow:0 0 6px #ffe9f2}
+@keyframes cursor-heart-breathe{0%,100%{transform:scale(1) rotate(-2deg)}50%{transform:scale(1.035) rotate(2deg)}}
+@keyframes cursor-heart-trail{0%{opacity:.88;transform:translate(-50%,-50%) rotate(var(--tilt)) scale(.82)}100%{opacity:0;transform:translate(calc(-50% + var(--drift-x)),calc(-50% - var(--drift-y))) rotate(calc(var(--tilt) + 24deg)) scale(.18)}}
+@keyframes cursor-heart-burst{0%{opacity:1;transform:translate(-50%,-50%) rotate(var(--tilt)) scale(.45)}100%{opacity:0;transform:translate(calc(-50% + var(--drift-x)),calc(-50% - var(--drift-y) - 22px)) rotate(calc(var(--tilt) + 52deg)) scale(.12)}}
+@media(prefers-reduced-motion:reduce){.heart-cursor-main svg{animation:none}.heart-cursor-main.over-interactive svg{transform:none}.heart-cursor-particle{display:none}}
